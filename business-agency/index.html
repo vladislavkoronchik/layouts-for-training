@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Business Agency</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="navbar__logo">
+			<a href="#" class="navbar__logo-link">
+				<span>C</span>ode<span>A</span>nd<span>C</span>reate
+			</a>
+		</div>
+		<div class="navbar__menu-icon menu-icon">
+			<div class="menu-icon__line menu-icon__line--1"></div>
+			<div class="menu-icon__line menu-icon__line--2"></div>
+			<div class="menu-icon__line menu-icon__line--3"></div>
+		</div>
+		<ul class="navbar__menu-list menu-list">
+			<li class="menu-list__item"><a class="menu-list__link" href="#hero">Home</a></li>
+			<li class="menu-list__item"><a class="menu-list__link" href="#about">About</a></li>
+			<li class="menu-list__item"><a class="menu-list__link" href="#pricing">Pricing</a></li>
+			<li class="menu-list__item"><a class="menu-list__link" href="#">Blog</a></li>
+			<li class="menu-list__item"><a class="menu-list__link" href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<section class="hero fullscreen" id="hero">
+			<div class="hero__content">
+				<h1 class="hero__headings">
+					<span class="hero__heading hero__heading--1">Business Ideas</span>
+					<span class="hero__heading hero__heading--2">Consulting</span>
+					<span class="hero__heading hero__heading--3">Digital Marketing</span>
+					<span class="hero__heading hero__heading--4">Strategy</span>
+				</h1>
+				<p class="hero__paragraph">Lorem ipsum dolor sit.</p>
+				<button class="hero__btn">Discover Now</button>
+			</div>
+		</section>
+		<section class="about fullscreen" id="about">
+			<h2 class="about__heading section-heading">About Us</h2>
+			<div class="about__body">
+				<div class="about__video-wrapper">
+					<video class="about__video" src="images/about-us-video.mp4"></video>
+					<div class="about__video-controls">
+						<div class="about__video-bar-wrapper">
+							<div class="about__video-bar"></div>
+						</div>
+						<div class="about__video-buttons">
+							<button class="about__video-button">
+								<i class="about__video-button-icon far fa-play-circle"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<p class="about__quote">
+					<i class="about__quote-icon about__quote-icon--left fas fa-quote-left"></i>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error asperiores earum et. Dolor explicabo atque, possimus, sit quis eligendi dolore commodi facilis vero officia inventore id soluta quae incidunt aspernatur fuga harum nisi exercitationem error beatae eveniet laborum sequi necessitatibus.
+					<i class="about__quote-icon about__quote-icon--right fas fa-quote-right"></i>
+				</p>
+			</div>
+		</section>
+		<section class="pricing fullscreen" id="pricing">
+			<h2 class="pricing__heading section-heading">Pricing</h2>
+			<div class="pricing__swiper swiper">
+				<div class="pricing__cards-wrapper swiper-wrapper">
+					<div class="pricing__card card-pricing swiper-slide">
+						<div class="card-pricing__front">
+							<h3 class="card-pricing__heading card-pricing__heading--free">FREE</h3>
+							<h4 class="card-pricing__price">$0</h4>
+							<ul class="card-pricing__list card-pricing__list--free">
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-times"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-times"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-times"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+							</ul>
+							<button class="card-pricing__btn card-pricing__btn--free">Choose Plan</button>
+						</div>
+						<div class="card-pricing__back card-pricing__back--free">
+							<a class="card-pricing__back-link" href="#">Order Now</a>
+						</div>
+					</div>
+					<div class="pricing__card card-pricing swiper-slide">
+						<div class="card-pricing__front">
+							<h3 class="card-pricing__heading card-pricing__heading--basic">BASIC</h3>
+							<h4 class="card-pricing__price">$299</h4>
+							<ul class="card-pricing__list card-pricing__list--basic">
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-times"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+							</ul>
+							<button class="card-pricing__btn card-pricing__btn--basic">Choose Plan</button>
+						</div>
+						<div class="card-pricing__back card-pricing__back--basic">
+							<a class="card-pricing__back-link" href="#">Order Now</a>
+						</div>
+					</div>
+					<div class="pricing__card card-pricing swiper-slide">
+						<div class="card-pricing__front">
+							<h3 class="card-pricing__heading card-pricing__heading--standart">STANDART</h3>
+							<h4 class="card-pricing__price">$699</h4>
+							<ul class="card-pricing__list card-pricing__list--standart">
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+							</ul>
+							<button class="card-pricing__btn card-pricing__btn--standart">Choose Plan</button>
+						</div>
+						<div class="card-pricing__back card-pricing__back--standart">
+							<a class="card-pricing__back-link" href="#">Order Now</a>
+						</div>
+					</div>
+					<div class="pricing__card card-pricing swiper-slide">
+						<div class="card-pricing__front">
+							<h3 class="card-pricing__heading card-pricing__heading--premium">PREMIUM</h3>
+							<h4 class="card-pricing__price">$999</h4>
+							<ul class="card-pricing__list card-pricing__list--premium">
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+								<li class="card-pricing__list-item">
+									<i class="card-pricing__list-item-icon fas fa-check"></i>
+									<span class="card-pricing__list-item-text">Pricing Card Item</span>
+								</li>
+							</ul>
+							<button class="card-pricing__btn card-pricing__btn--premium">Choose Plan</button>
+						</div>
+						<div class="card-pricing__back card-pricing__back--premium">
+							<a class="card-pricing__back-link" href="#">Order Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="contact fullscreen" id="contact">
+			<h2 class="contact__heading section-heading">Contact</h2>
+			<div class="contact__wrapper">
+				<div class="contact__details details-contact">
+					<div class="details-contact__item details-contact__item--phone">
+						<i class="details-contact__item-icon fas fa-mobile-alt"></i>
+						<h4 class="details-contact__item-heading">Phone</h4>
+						<p class="details-contact__item-paragraph">+123 456 789</p>
+						<p class="details-contact__item-paragraph">+987 654 321</p>
+					</div>
+					<div class="details-contact__item details-contact__item--address">
+						<i class="details-contact__item-icon fas fa-map-marker-alt"></i>
+						<h4 class="details-contact__item-heading">Address</h4>
+						<p class="details-contact__item-paragraph">Main Street #123</p>
+						<p class="details-contact__item-paragraph">Wall Street #123</p>
+					</div>
+					<div class="details-contact__item details-contact__item--email">
+						<i class="details-contact__item-icon far fa-envelope"></i>
+						<h4 class="details-contact__item-heading">Email</h4>
+						<p class="details-contact__item-paragraph">support@gmail.com</p>
+						<p class="details-contact__item-paragraph">sales@gmail.com</p>
+					</div>
+				</div>
+				<h3 class="contact__form-heading">Get in Touch</h3>
+				<form class="contact__form form-contact">
+					<input class="form-contact__input" type="text" placeholder="Your Name">
+					<input class="form-contact__input" type="email" placeholder="Your Email">
+					<textarea class="form-contact__input form-contact__textarea" placeholder="Your Message"></textarea>
+					<input class="form-contact__input form-contact__btn" type="submit" value="Send Message">
+				</form>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="footer__nav nav-footer">
+				<a class="nav-footer__link" href="#hero">Home</a>
+				<a class="nav-footer__link" href="#about">About As</a>
+				<a class="nav-footer__link" href="#pricing">Pricing</a>
+				<a class="nav-footer__link" href="#contact">Contact</a>
+			</div>
+			<p class="footer__copyright">
+				Copyright &copy; CodeAndCreate All Right Reserved
+			</p>
+		</footer>
+	</div>
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
