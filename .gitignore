@@ -1,0 +1,6 @@
+apple-ecommerce/node_modules/
+Apple+eCommerce/
+node_modules/
+dist/
+.vscode/
+package-lock.json
