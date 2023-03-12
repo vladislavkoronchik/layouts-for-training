@@ -1,0 +1,829 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;700&display=swap');
+
+:root {
+  --primary-color: #6edae6;
+
+  --white-color: #fff;
+
+  --black-color: #000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: "Work Sans", sans-serif;
+  text-decoration: none;
+  /*outline: 0;*/
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body{
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.fullscreen {
+  min-height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-title {
+  font-weight: 200;
+  font-size: calc(5rem + (10 - 5) * ((100vw - 32rem) / (192 - 32)));
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 3rem calc(2rem + (3 - 2) * ((100vw - 32rem) / (192 - 32)));
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: padding 0.5s, opacity 0.5s 0.5s, transform 0.5s;
+}
+
+.header.is-visible {
+	padding: 1.5rem calc(2rem + (3 - 2) * ((100vw - 32rem) / (192 - 32)));
+	opacity: 1;
+	transform: translateY(0);
+  transition: padding 0.5s, opacity 0.5s, transform 0.5s;
+}
+
+.header.is-scrolling {
+	align-items: center;
+	background-color: rgba(110, 218, 230, 0.7);
+}
+
+.header__apple-logo{
+}
+
+.header__apple-icon {
+  font-size: calc(3.5rem + (10 - 3.5) * ((100vw - 32rem) / (192 - 32)));
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.is-scrolling .header__apple-icon {
+	font-size: calc(3.5rem + (6 - 3.5) * ((100vw - 32rem) / (192 - 32)));
+	transition: font-size 0.5s;
+}
+
+.header__navbar {
+}
+
+.navbar {
+}
+
+.navbar__link {
+  display: inline-block;
+  margin: 0 calc(1.5rem + (3 - 1.5) * ((100vw - 32rem) / (192 - 32)));
+  font-size: calc(1.6rem + (2 - 1.6) * ((100vw - 32rem) / (192 - 32)));
+  color: var(--black-color);
+  transition: transform 0.5s;
+}
+
+.navbar__link:hover {
+  transform: scale(1.5);
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color);
+  clip-path: polygon(100% 0, 100% 95%, 38% 100%, 0 100%, 0 0);
+}
+
+.hero__cube-wrapper {
+  perspective: 100rem;
+}
+
+.hero__cube {
+  position: relative;
+  top: -5rem;
+}
+
+.hero__cube-controls {
+  position: absolute;
+  bottom: -12rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero__banner {
+}
+
+.hero__bg-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__bg-slideshow div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 5s;
+}
+
+.hero__bg-slideshow div.is-visible {
+  opacity: 1;
+}
+
+.cube-hero {
+  position: relative;
+  width: 30rem;
+  height: 55rem;
+  transform: rotateX(0deg) rotateY(20deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.cube-hero__front-side, .cube-hero__back-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fee;
+  box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+  transform-style: preserve-3d;
+}
+
+.cube-hero__front-side {
+  padding: 2.5rem;
+  transform: translateZ(5rem);
+}
+
+.cube-hero__front-side::before, .cube-hero__front-side::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  background-color: #fee;
+  box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+}
+
+.cube-hero__front-side::before {
+  top: 0;
+  transform: rotateX(-90deg);
+  transform-origin: top;
+}
+
+.cube-hero__front-side::after {
+  bottom: 0;
+  transform: rotateX(90deg);
+  transform-origin: bottom;
+}
+
+.cube-hero__back-side {
+  transform: translateZ(-5rem);
+}
+
+.cube-hero__back-side::before, .cube-hero__back-side::after {
+  content: "iPhone";
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 100%;
+  font-weight: 300;
+  font-size: 2rem;
+  color: #ec1919;
+  background-color: #fee;
+  box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+}
+
+.cube-hero__back-side::before {
+  left: 0;
+  transform: rotateY(-90deg);
+  transform-origin: left;
+}
+
+.cube-hero__back-side::after {
+  right: 0;
+  transform: rotateY(90deg);
+  transform-origin: right;
+}
+
+.cube-hero__iphone-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.cube-hero__apple-icon {
+  font-size: 12rem;
+  color: var(--primary-color);
+  text-shadow: 0.1rem 0.1rem 0.2rem #aaa, -0.1rem -0.1rem 0.2rem #aaa;
+  transform: rotateY(180deg);
+}
+
+.cube-controls-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1rem solid rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+}
+
+.cube-controls-hero__arrow {
+  position: absolute;
+}
+
+.cube-controls-hero__arrow--top-x-control {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cube-controls-hero__arrow--bottom-x-control {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cube-controls-hero__arrow--left-y-control {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.cube-controls-hero__arrow--right-y-control {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.cube-controls-hero__arrow--top-z-control {
+  top: 10%;
+  right: 10%;
+  transform: rotate(45deg);
+}
+
+.cube-controls-hero__arrow--bottom-z-control {
+  bottom: 10%;
+  left: 10%;
+  transform: rotate(45deg);
+}
+
+.cube-controls-hero__mode {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cube-controls-hero__arrow i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  opacity: 0.5;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+.cube-controls-hero__arrow:hover i {
+  opacity: 1;
+}
+
+.banner-hero {
+  flex-direction: column;
+}
+
+.banner-hero__title {
+  font-weight: 300;
+  font-size: calc(3.6rem + (13 - 3.6) * ((100vw - 32rem) / (192 - 32)));
+  text-transform: uppercase;
+  /*letter-spacing: 0.5rem;*/
+  letter-spacing: 0.0384615em;
+}
+
+.banner-hero__quote {
+  margin: 6rem 0 4rem;
+  font-weight: 400;
+  font-size: calc(1.8rem + (4 - 1.8) * ((100vw - 32rem) / (192 - 32)));
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+
+.banner-hero__author {
+  margin-bottom: 5rem;
+  font-size: calc(1.6rem + (3 - 1.6) * ((100vw - 32rem) / (192 - 32)));
+}
+
+.banner-hero__btn {
+  padding: 2rem 4rem;
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--primary-color);
+  letter-spacing: 0.1rem;
+  background-color: var(--black-color);
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: clip-path 0.5s;
+  clip-path: polygon(50% 0%, 81% 5%, 100% 0, 100% 100%, 80% 95%, 50% 100%, 20% 95%, 0 100%, 0 0, 23% 5%);
+}
+
+.banner-hero__btn:hover {
+  clip-path: polygon(40% 15%, 77% 15%, 100% 10%, 100% 90%, 75% 85%, 40% 85%, 30% 100%, 0 50%, 0 50%, 30% 0);
+}
+
+.iphones {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 120vh;
+  padding: 10vh 0;
+}
+
+.iphones__title {
+  position: relative;
+  margin-bottom: 5rem;
+  color: var(--black-color);
+}
+
+.iphones__title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 130%;
+  height: 30vw;
+  background-image: linear-gradient(var(--primary-color), var(--white-color));
+  border-radius: 1rem;
+  transform: skewX(-50deg);
+  transform-origin: left top;
+}
+
+.iphones__imgs {
+  position: relative;
+  width: 50vw;
+  height: 60vh;
+  background-image: linear-gradient(var(--primary-color), var(--white-color));
+  border-radius: 0.5rem;
+}
+
+.iphones__img {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  transition: opacity 3s;
+  object-fit: contain;
+}
+
+.iphones__img--1 {
+  opacity: 1;
+}
+
+.iphones__imgs:hover .iphones__img--1 {
+  opacity: 0;
+}
+
+.iphones__img--2 {
+  opacity: 0;
+}
+
+.iphones__imgs:hover .iphones__img--2 {
+  opacity: 1;
+}
+
+.iphones__btns {
+  display: flex;
+}
+
+.iphones__btn {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  margin: 0 3rem;
+  background-image: linear-gradient(to right, rgba(51, 51, 51, 1) 60%, rgba(82, 82, 82, 1));
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.iphones__btn::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  border: 0.1rem solid var(--primary-color);
+  border-radius: 1rem;
+}
+
+.iphones__btn-text {
+  position: absolute;
+  top: -3rem;
+  width: max-content;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  transform: scale(0);
+  transition: transform 0.5s;
+}
+
+.iphones__btn:hover .iphones__btn-text {
+  transform: scale(1);
+}
+
+.macbook {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 15rem 0;
+  background-color: var(--black-color);
+  clip-path: polygon(68% 0, 100% 0, 100% 97%, 38% 100%, 0 100%, 0 3%);
+}
+
+.macbook__title {
+  margin-bottom: 15rem;
+  color: var(--primary-color);
+}
+
+.macbook__content {
+  position: relative;
+  flex-direction: column;
+  width: 80%;
+  perspective: 1000rem;
+}
+
+.macbook__img {
+  width: inherit;
+}
+
+.macbook__img--screen {
+  transform: rotateX(-80deg);
+  transform-origin: bottom;
+  transition: transform 3s 2s;
+}
+
+.change .macbook__img--screen {
+  transform: rotateX(0deg);
+  transition: transform 3s;
+}
+
+.macbook__img--keyboard {
+}
+
+.macbook__loading-wrapper {
+  position: absolute;
+  top: 6%;
+  z-index: -1;
+  width: 60%;
+  height: 85%;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("images/MacBook/macbook-desktop.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.change .macbook__loading-wrapper {
+  opacity: 1;
+  transition: opacity 1s 2s;
+}
+
+.macbook__loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.macbook__info {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.change .macbook__info {
+  opacity: 1;
+  transition: opacity 1s 6s;
+}
+
+.loading-macbook {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-color);
+  opacity: 1;
+}
+
+.change .loading-macbook {
+  opacity: 0;
+  transition: opacity 1s 5s;
+}
+
+.loading-macbook__icon-apple {
+  margin-bottom: 2rem;
+  font-size: 10rem;
+  color: var(--white-color);
+}
+
+.loading-macbook__progress-bar {
+  position: relative;
+  width: 22rem;
+  height: 0.3rem;
+  background-color: #888;
+  border-radius: 5rem;
+}
+
+.loading-macbook__progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--white-color);
+}
+
+.change .loading-macbook__progress-bar::after {
+  width: 100%;
+  transition: width 1s 3s;
+}
+
+.info-macbook {
+  width: 70rem;
+  text-align: center;
+}
+
+.info-macbook__title {
+  font-weight: 400;
+  font-size: 6rem;
+  color: var(--primary-color);
+}
+
+.info-macbook__price {
+  margin: 3rem 0;
+  font-weight: 200;
+  font-size: 2.5rem;
+}
+
+.info-macbook__btn {
+  width: 25rem;
+  height: 5rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  letter-spacing: 0.2rem;
+  background-image: linear-gradient(#ddd, #fff);
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem #fff, -0.1rem -0.1rem 0.1rem #fff;
+  cursor: pointer;
+}
+
+.watch {
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 140vh;
+  padding: 20vh 0;
+}
+
+.watch__body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.watch__bands {
+  position: absolute;
+  display: flex;
+  transition: margin-right 1s;
+}
+
+.watch__band-img {
+  width: 35rem;
+  height: 35rem;
+  object-fit: contain;
+}
+
+.watch__cases {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  transition: margin-top 1s;
+}
+
+.watch__case-img {
+  width: 35rem;
+  height: 35rem;
+  object-fit: contain;
+}
+
+.watch__controls {
+  position: absolute;
+  bottom: 28vh;
+  left: 35%;
+  width: 14rem;
+  height: 9rem;
+}
+
+.watch__control {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  background-color: rgba(221, 221, 221, 0.4);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.watch__control-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  pointer-events: none;
+}
+
+.watch__control:disabled .watch__control-icon {
+  color: #b4b4b4;
+}
+
+.watch__control--top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.watch__control--right {
+  right: 0;
+  bottom: 0;
+}
+
+.watch__control--bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.watch__control--left {
+  bottom: 0;
+  left: 0;
+}
+
+.watch__btn {
+  position: absolute;
+  right: 35%;
+  bottom: 30vh;
+  width: 13rem;
+  height: 5rem;
+  color: var(--primary-color);
+  background-color: var(--black-color);
+  border: 0.1rem dashed var(--white-color);
+  cursor: pointer;
+}
+
+.airpods {
+  width: 100%;
+  height: 100vh;
+}
+
+.airpods__content {
+  position: relative;
+  display: flex;
+  width: 90%;
+  height: 80%;
+}
+
+.airpods__title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-weight: 300;
+  font-size: 15rem;
+  color: var(--white-color);
+  text-shadow: 0.1rem 0.1rem 0 #999;
+  transform: translateX(-50%);
+}
+
+.airpods__img {
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.airpods__img--1 {
+}
+
+.airpods__img--2 {
+  background-color: var(--primary-color);
+}
+
+.airpods__buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 5rem;
+  transform: translate(-50%, -50%);
+}
+
+.airpods__btn {
+  width: 15rem;
+  height: 4rem;
+  margin: 0 2rem;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border: 0;
+  cursor: pointer;
+}
+
+.airpods__btn--1 {
+}
+
+.airpods__btn--2 {
+  color: var(--primary-color);
+  background-color: var(--white-color);
+}
+
+.footer {
+	flex-direction: column;
+	width: 100%;
+	padding: 0 1.5rem;
+}
+
+.footer__icons {
+	margin: 5rem 0 2.5rem;
+}
+
+.footer__icon-link {
+	margin: 0 5rem;
+}
+
+.footer__icon-img {
+	width: 10rem;
+}
+
+.footer__icon-img--1 {
+}
+
+.footer__icon-img--2 {
+}
+
+.footer__icon-img--3 {
+}
+
+.footer__icon-img--4 {
+}
+
+.footer__icon-img--5 {
+}
+
+.footer__copyright {
+	display: block;
+	margin: 2.5rem 0 5rem;
+}
+
+@media (max-width: 1500px) {
+  html {
+    font-size: 45%;
+  }
+}
